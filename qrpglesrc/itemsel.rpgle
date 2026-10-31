@@ -27,6 +27,7 @@ picked = '';
 load();
 
 dow *on;
+   write SELWIN;
    exfmt SELCTL;
    if cancelKey;
       leave;

@@ -69,6 +69,7 @@ sflDsp = (rrn > 0);
 sflDspCtl = *on;
 sflEnd = *on;
    // Enter, F3 and F12 all go back
+write FOOTER;
 exfmt LINCTL;
 
 *inlr = *on;

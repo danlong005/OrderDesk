@@ -17,6 +17,7 @@
      A          R LINCTL                    SFLCTL(LINSFL)
      A                                      SFLSIZ(0100)
      A                                      SFLPAG(0009)
+     A                                      OVERLAY
      A  31                                  SFLDSP
      A  32                                  SFLDSPCTL
      A  33                                  SFLCLR
@@ -56,6 +57,7 @@
      A                                      COLOR(WHT)
      A                                 10 73'Amount'
      A                                      COLOR(WHT)
+     A          R FOOTER
      A                                 21 45'Order total . :'
      A            DTOTAL        11Y 2O 21 62
      A                                      EDTCDE(1)

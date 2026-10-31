@@ -24,6 +24,7 @@
      A                                      CF10(10 'Place order')
      A                                      RTNCSRLOC(&CSRRCD &CSRFLD)
      A                                      SFLCSRRRN(&CSRRRN)
+     A                                      OVERLAY
      A  31                                  SFLDSP
      A  32                                  SFLDSPCTL
      A  33                                  SFLCLR
@@ -74,6 +75,7 @@
      A                                      COLOR(WHT)
      A                                 10 74'Amount'
      A                                      COLOR(WHT)
+     A          R FOOTER
      A                                 22 45'Order total . . . :'
      A            HTOTAL        11Y 2O 22 65
      A                                      EDTCDE(1)

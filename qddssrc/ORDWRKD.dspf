@@ -17,6 +17,7 @@
      A                                      SFLPAG(0011)
      A                                      CF05(05 'Refresh')
      A                                      CF06(06 'New order')
+     A                                      OVERLAY
      A  31                                  SFLDSP
      A  32                                  SFLDSPCTL
      A  33                                  SFLCLR
@@ -53,6 +54,7 @@
      A                                      COLOR(WHT)
      A                                  9 73'Amount'
      A                                      COLOR(WHT)
+     A          R FOOTER
      A                                 23  2'F3=Exit   F5=Refresh   F6=New -
      A                                      order   F12=Cancel'
      A                                      COLOR(BLU)

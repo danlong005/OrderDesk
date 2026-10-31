@@ -50,6 +50,7 @@ newOrder();
 dow *on;
    MSG = message;
    message = '';
+   write FOOTER;
    exfmt ORDCTL;
    customerError = *off;
    shipError = *off;

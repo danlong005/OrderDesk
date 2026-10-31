@@ -3,6 +3,10 @@
      A                                      DSPSIZ(24 80 *DS3)
      A                                      INDARA
      A                                      CA12(12 'Cancel')
+     A          R SELWIN                    WINDOW(3 18 15 46)
+     A                                      WDWTITLE((*TEXT 'Select Customer'))
+     A                                 14  2'F12=Cancel'
+     A                                      COLOR(BLU)
      A          R SELSFL                    SFL
      A            SOPT           1A  B  5  3
      A            SCUST          6S 0O  5  7
@@ -10,8 +14,8 @@
      A          R SELCTL                    SFLCTL(SELSFL)
      A                                      SFLSIZ(0050)
      A                                      SFLPAG(0008)
-     A                                      WINDOW(3 18 15 46)
-     A                                      WDWTITLE((*TEXT 'Select Customer'))
+     A                                      WINDOW(SELWIN)
+     A                                      OVERLAY
      A  31                                  SFLDSP
      A  32                                  SFLDSPCTL
      A  33                                  SFLCLR
@@ -27,5 +31,3 @@
      A                                      COLOR(WHT)
      A                                  4 15'Name'
      A                                      COLOR(WHT)
-     A                                 15  2'F12=Cancel'
-     A                                      COLOR(BLU)

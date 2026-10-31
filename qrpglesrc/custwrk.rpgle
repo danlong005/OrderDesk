@@ -42,6 +42,7 @@ loadCustomers();
 dow *on;
    MSG = message;
    message = '';
+   write FOOTER;
    exfmt CUSTCTL;
 
    select;

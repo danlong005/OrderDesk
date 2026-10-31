@@ -92,7 +92,7 @@ dcl-proc setTitle;
    end-pi;
 
    TITLE = '';
-   %subst(TITLE : (%len(TITLE) - %len(text)) / 2 + 1 : %len(text)) = text;
+   %subst(TITLE : %div(%len(TITLE) - %len(text) : 2) + 1 : %len(text)) = text;
 end-proc;
 
 

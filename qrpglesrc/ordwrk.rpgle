@@ -48,6 +48,7 @@ loadOrders();
 dow *on;
    MSG = message;
    message = '';
+   write FOOTER;
    exfmt ORDCTL;
 
    select;
