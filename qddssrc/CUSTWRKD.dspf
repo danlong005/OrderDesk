@@ -1,0 +1,64 @@
+     A* CUSTWRKD: Work with Customers
+     A*
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      CA03(03 'Exit')
+     A                                      CA12(12 'Cancel')
+     A          R CUSTSFL                   SFL
+     A            SOPT           1A  B  9  3
+     A            SCUST          6S 0O  9  7
+     A            SNAME         30A  O  9 15
+     A            SCITY         20A  O  9 47
+     A            SSTATE         2A  O  9 69
+     A            SACTV          1A  O  9 75
+     A          R CUSTCTL                   SFLCTL(CUSTSFL)
+     A                                      SFLSIZ(0100)
+     A                                      SFLPAG(0012)
+     A                                      CF05(05 'Refresh')
+     A                                      CF06(06 'Add')
+     A  31                                  SFLDSP
+     A  32                                  SFLDSPCTL
+     A  33                                  SFLCLR
+     A  34                                  SFLEND(*MORE)
+     A            TOPRRN         4S 0H
+     A                                      SFLRCDNBR(CURSOR)
+     A                                  1  2'CUSTWRK'
+     A                                  1 32'Work with Customers'
+     A                                      DSPATR(HI)
+     A                                  1 71SYSNAME
+     A                                  2 71DATE
+     A                                      EDTCDE(Y)
+     A                                  3  2'Position to name . . .'
+     A            POSNAM        20A  B  3 26
+     A                                      CHECK(LC)
+     A                                  5  2'Type options, press Enter.'
+     A                                      COLOR(BLU)
+     A                                  6  3'2=Change   4=Delete   5=Display   -
+     A                                      7=Orders'
+     A                                      COLOR(BLU)
+     A                                  8  2'Opt'
+     A                                      COLOR(WHT)
+     A                                  8  7'Number'
+     A                                      COLOR(WHT)
+     A                                  8 15'Name'
+     A                                      COLOR(WHT)
+     A                                  8 47'City'
+     A                                      COLOR(WHT)
+     A                                  8 69'St'
+     A                                      COLOR(WHT)
+     A                                  8 73'Active'
+     A                                      COLOR(WHT)
+     A                                 23  2'F3=Exit   F5=Refresh   F6=Add   -
+     A                                      F12=Cancel'
+     A                                      COLOR(BLU)
+     A            MSG           78A  O 24  2
+     A                                      COLOR(WHT)
+     A          R DLTWIN                    WINDOW(6 15 8 48)
+     A                                      WDWTITLE((*TEXT 'Delete Customer'))
+     A                                      CA10(10 'Delete')
+     A                                  2  2'Customer . . :'
+     A            DCUST          6S 0O  2 17
+     A            DNAME         30A  O  3 17
+     A                                  5  2'Press F10 to delete this customer.'
+     A                                  7  2'F10=Delete   F12=Cancel'
+     A                                      COLOR(BLU)

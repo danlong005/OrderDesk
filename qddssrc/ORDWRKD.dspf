@@ -1,0 +1,60 @@
+     A* ORDWRKD: Work with Orders
+     A*
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      CA03(03 'Exit')
+     A                                      CA12(12 'Cancel')
+     A          R ORDSFL                    SFL
+     A            SOPT           1A  B 10  3
+     A            SORD           7S 0O 10  7
+     A            SDATE         10A  O 10 16
+     A            SCNAME        25A  O 10 28
+     A            SSTAT         10A  O 10 55
+     A            SAMT           9Y 2O 10 67
+     A                                      EDTCDE(1)
+     A          R ORDCTL                    SFLCTL(ORDSFL)
+     A                                      SFLSIZ(0100)
+     A                                      SFLPAG(0011)
+     A                                      CF05(05 'Refresh')
+     A                                      CF06(06 'New order')
+     A  31                                  SFLDSP
+     A  32                                  SFLDSPCTL
+     A  33                                  SFLCLR
+     A  34                                  SFLEND(*MORE)
+     A            TOPRRN         4S 0H
+     A                                      SFLRCDNBR(CURSOR)
+     A                                  1  2'ORDWRK'
+     A                                  1 33'Work with Orders'
+     A                                      DSPATR(HI)
+     A                                  1 71SYSNAME
+     A                                  2 71DATE
+     A                                      EDTCDE(Y)
+     A                                  3  2'Status . . . . . . . .'
+     A            FSTAT         10A  B  3 26
+     A                                  3 38'OPEN, HELD, SHIPPED, CANCELLED'
+     A                                      COLOR(BLU)
+     A                                  4  2'Customer . . . . . . .'
+     A            FCUST          6Y 0B  4 26
+     A                                      EDTCDE(Z)
+     A            FCNAME        30A  O  4 35
+     A                                  6  2'Type options, press Enter.'
+     A                                      COLOR(BLU)
+     A                                  7  3'4=Cancel   5=Display   6=Release'
+     A                                      COLOR(BLU)
+     A                                  9  2'Opt'
+     A                                      COLOR(WHT)
+     A                                  9  7'Order'
+     A                                      COLOR(WHT)
+     A                                  9 16'Date'
+     A                                      COLOR(WHT)
+     A                                  9 28'Customer'
+     A                                      COLOR(WHT)
+     A                                  9 55'Status'
+     A                                      COLOR(WHT)
+     A                                  9 73'Amount'
+     A                                      COLOR(WHT)
+     A                                 23  2'F3=Exit   F5=Refresh   F6=New -
+     A                                      order   F12=Cancel'
+     A                                      COLOR(BLU)
+     A            MSG           78A  O 24  2
+     A                                      COLOR(WHT)

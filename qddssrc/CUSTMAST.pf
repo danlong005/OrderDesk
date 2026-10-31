@@ -1,0 +1,27 @@
+     A* CUSTMAST: customers
+     A*
+     A                                      UNIQUE
+     A          R CUSTR                     TEXT('Customer')
+     A            CMCUST         6S 0
+     A                                      COLHDG('Customer' 'number')
+     A            CMNAME        40A
+     A                                      COLHDG('Name')
+     A            CMADDR        40A
+     A                                      COLHDG('Address')
+     A            CMCITY        25A
+     A                                      COLHDG('City')
+     A            CMSTATE        2A
+     A                                      COLHDG('State')
+     A            CMZIP         10A
+     A                                      COLHDG('ZIP code')
+     A            CMPHONE       15A
+     A                                      COLHDG('Phone')
+     A            CMCRLMT        9P 2
+     A                                      COLHDG('Credit' 'limit')
+     A            CMACTV         1A
+     A                                      COLHDG('Active')
+     A                                      TEXT('Y or N')
+     A            CMADDED        8S 0
+     A                                      COLHDG('Date' 'added')
+     A                                      TEXT('YYYYMMDD')
+     A          K CMCUST

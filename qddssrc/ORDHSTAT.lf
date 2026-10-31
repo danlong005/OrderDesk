@@ -1,0 +1,5 @@
+     A* ORDHSTAT: orders by status, newest first
+     A*
+     A          R ORDHR                     PFILE(ORDHDR)
+     A          K OHSTAT
+     A          K OHORD                     DESCEND

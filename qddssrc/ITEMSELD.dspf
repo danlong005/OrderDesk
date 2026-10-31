@@ -1,0 +1,38 @@
+     A* ITEMSELD: pick an item (window)
+     A*
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      CA12(12 'Cancel')
+     A          R SELSFL                    SFL
+     A            SOPT           1A  B  5  3
+     A            SITEM         10A  O  5  7
+     A            SDESC         25A  O  5 19
+     A            SPRICE         7Y 2O  5 46
+     A                                      EDTCDE(1)
+     A            SONHND         7Y 0O  5 57
+     A                                      EDTCDE(1)
+     A          R SELCTL                    SFLCTL(SELSFL)
+     A                                      SFLSIZ(0050)
+     A                                      SFLPAG(0008)
+     A                                      WINDOW(3 6 15 66)
+     A                                      WDWTITLE((*TEXT 'Select Item'))
+     A  31                                  SFLDSP
+     A  32                                  SFLDSPCTL
+     A  33                                  SFLCLR
+     A  34                                  SFLEND(*MORE)
+     A                                  1  2'Position to . .'
+     A            SPOS          10A  B  1 18
+     A                                  2  2'Type 1 to select, press Enter.'
+     A                                      COLOR(BLU)
+     A                                  4  2'Opt'
+     A                                      COLOR(WHT)
+     A                                  4  7'Item'
+     A                                      COLOR(WHT)
+     A                                  4 19'Description'
+     A                                      COLOR(WHT)
+     A                                  4 50'Price'
+     A                                      COLOR(WHT)
+     A                                  4 59'On hand'
+     A                                      COLOR(WHT)
+     A                                 15  2'F12=Cancel'
+     A                                      COLOR(BLU)

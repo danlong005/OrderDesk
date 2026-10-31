@@ -1,0 +1,22 @@
+     A* ORDHDR: order headers
+     A*
+     A                                      UNIQUE
+     A          R ORDHR                     TEXT('Order header')
+     A            OHORD          7S 0
+     A                                      COLHDG('Order')
+     A            OHCUST         6S 0
+     A                                      COLHDG('Customer')
+     A            OHDATE         8S 0
+     A                                      COLHDG('Order' 'date')
+     A                                      TEXT('YYYYMMDD')
+     A            OHSHIP         8S 0
+     A                                      COLHDG('Ship' 'date')
+     A                                      TEXT('YYYYMMDD')
+     A            OHSTAT        10A
+     A                                      COLHDG('Status')
+     A                                      TEXT('OPEN HELD SHIPPED CANCELLED')
+     A            OHTOTAL       11P 2
+     A                                      COLHDG('Total')
+     A            OHPO          20A
+     A                                      COLHDG('Customer' 'PO')
+     A          K OHORD

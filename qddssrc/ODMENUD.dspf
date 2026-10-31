@@ -1,0 +1,27 @@
+     A* ODMENUD: Order Desk main menu
+     A*
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      CA03(03 'Exit')
+     A                                      CA12(12 'Cancel')
+     A          R MENU
+     A                                  1  2'ODMENU'
+     A                                  1 36'Order Desk'
+     A                                      DSPATR(HI)
+     A                                  1 71SYSNAME
+     A                                  2 71DATE
+     A                                      EDTCDE(Y)
+     A                                  3  2'Select one of the following:'
+     A                                  5  6'1. Work with customers'
+     A                                  6  6'2. Enter an order'
+     A                                  7  6'3. Work with orders'
+     A                                  8  6'4. Browse items'
+     A                                 10  5'90. Sign off'
+     A                                 20  2'Selection or command'
+     A                                 21  2'===>'
+     A            CMD           72A  B 21  7
+     A                                      CHECK(LC)
+     A                                 23  2'F3=Exit   F12=Cancel'
+     A                                      COLOR(BLU)
+     A            MSG           78A  O 24  2
+     A                                      COLOR(WHT)

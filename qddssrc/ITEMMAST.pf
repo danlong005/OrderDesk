@@ -1,0 +1,15 @@
+     A* ITEMMAST: items
+     A*
+     A                                      UNIQUE
+     A          R ITEMR                     TEXT('Item')
+     A            IMITEM        10A
+     A                                      COLHDG('Item')
+     A            IMDESC        30A
+     A                                      COLHDG('Description')
+     A            IMPRICE        7P 2
+     A                                      COLHDG('Price')
+     A            IMONHND        7P 0
+     A                                      COLHDG('On hand')
+     A            IMUOM          3A
+     A                                      COLHDG('Unit')
+     A          K IMITEM

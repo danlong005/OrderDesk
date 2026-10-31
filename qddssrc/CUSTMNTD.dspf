@@ -1,0 +1,80 @@
+     A* CUSTMNTD: add, change or display a customer
+     A*
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      CA03(03 'Exit')
+     A                                      CA12(12 'Cancel')
+     A          R DETAIL                    HELP(25)
+     A                                  1  2'CUSTMNT'
+     A            TITLE         28A  O  1 27
+     A                                      DSPATR(HI)
+     A                                  1 71SYSNAME
+     A                                  2 71DATE
+     A                                      EDTCDE(Y)
+     A N30                              3  2'Type changes, press Enter.'
+     A                                      COLOR(BLU)
+     A                                  5  2'Customer number . . . . :'
+     A            DCUST          6S 0O  5 30
+     A                                  6  2'Name  . . . . . . . . . .'
+     A            DNAME         40A  B  6 30
+     A                                      CHECK(LC)
+     A  30                                  DSPATR(PR)
+     A  51                                  ERRMSG('Type the customer name.' 51)
+     A                                  7  2'Address . . . . . . . . .'
+     A            DADDR         40A  B  7 30
+     A                                      CHECK(LC)
+     A  30                                  DSPATR(PR)
+     A                                  8  2'City  . . . . . . . . . .'
+     A            DCITY         25A  B  8 30
+     A                                      CHECK(LC)
+     A  30                                  DSPATR(PR)
+     A  52                                  ERRMSG('Type the city.' 52)
+     A                                  9  2'State . . . . . . . . . .'
+     A            DSTATE         2A  B  9 30
+     A  30                                  DSPATR(PR)
+     A  53                                  ERRMSG('Type a two-letter US state -
+     A                                      code, such as TX.' 53)
+     A                                  9 34'Two letters, such as TX'
+     A                                      COLOR(BLU)
+     A                                 10  2'ZIP code  . . . . . . . .'
+     A            DZIP          10A  B 10 30
+     A  30                                  DSPATR(PR)
+     A                                 11  2'Phone . . . . . . . . . .'
+     A            DPHONE        15A  B 11 30
+     A  30                                  DSPATR(PR)
+     A                                 12  2'Credit limit  . . . . . .'
+     A            DCRLMT         9Y 2B 12 30
+     A                                      EDTCDE(1)
+     A  30                                  DSPATR(PR)
+     A                                 13  2'Active  . . . . . . . . .'
+     A            DACTV          1A  B 13 30
+     A                                      VALUES('Y' 'N')
+     A  30                                  DSPATR(PR)
+     A                                 13 34'Y=Yes, N=No'
+     A                                      COLOR(BLU)
+     A                                 14  2'Date added  . . . . . . .'
+     A            DADDED         8Y 0B 14 30
+     A  30                                  DSPATR(PR)
+     A  54                                  ERRMSG('Type a date as YYYYMMDD, -
+     A                                      such as 20261030.' 54)
+     A                                 14 40'YYYYMMDD'
+     A                                      COLOR(BLU)
+     A                                 23  2'F3=Exit   F12=Cancel'
+     A                                      COLOR(BLU)
+     A          R HLPWIN                    WINDOW(4 8 14 62)
+     A                                      WDWTITLE((*TEXT 'Customer Help'))
+     A                                  2  2'A customer is anyone who can -
+     A                                      place orders.'
+     A                                  4  2'Name, city and state are -
+     A                                      required. The state is'
+     A                                  5  2'the two-letter US postal code.'
+     A                                  7  2'Credit limit: orders that take -
+     A                                      the customer over'
+     A                                  8  2'it, with their open and held -
+     A                                      orders, are held'
+     A                                  9  2'for credit review when they are -
+     A                                      placed.'
+     A                                 11  2'Active: only active customers can -
+     A                                      place orders.'
+     A                                 13  2'Enter=Continue   F12=Cancel'
+     A                                      COLOR(BLU)

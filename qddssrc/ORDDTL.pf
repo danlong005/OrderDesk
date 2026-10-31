@@ -1,0 +1,18 @@
+     A* ORDDTL: order lines
+     A*
+     A                                      UNIQUE
+     A          R ORDDR                     TEXT('Order line')
+     A            ODORD          7S 0
+     A                                      COLHDG('Order')
+     A            ODLINE         3S 0
+     A                                      COLHDG('Line')
+     A            ODITEM        10A
+     A                                      COLHDG('Item')
+     A            ODQTY          5P 0
+     A                                      COLHDG('Quantity')
+     A            ODPRICE        7P 2
+     A                                      COLHDG('Price')
+     A            ODAMT          9P 2
+     A                                      COLHDG('Amount')
+     A          K ODORD
+     A          K ODLINE

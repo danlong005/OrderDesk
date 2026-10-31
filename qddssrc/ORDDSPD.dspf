@@ -1,0 +1,63 @@
+     A* ORDDSPD: display an order
+     A*
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      CA03(03 'Exit')
+     A                                      CA12(12 'Cancel')
+     A          R LINSFL                    SFL
+     A            SLINE          3S 0O 11  2
+     A            SITEM         10A  O 11  7
+     A            SDESC         30A  O 11 19
+     A            SQTY           5Y 0O 11 50
+     A                                      EDTCDE(1)
+     A            SPRICE         7Y 2O 11 57
+     A                                      EDTCDE(1)
+     A            SAMT           9Y 2O 11 67
+     A                                      EDTCDE(1)
+     A          R LINCTL                    SFLCTL(LINSFL)
+     A                                      SFLSIZ(0100)
+     A                                      SFLPAG(0009)
+     A  31                                  SFLDSP
+     A  32                                  SFLDSPCTL
+     A  33                                  SFLCLR
+     A  34                                  SFLEND(*MORE)
+     A                                  1  2'ORDDSP'
+     A                                  1 35'Display Order'
+     A                                      DSPATR(HI)
+     A                                  1 71SYSNAME
+     A                                  2 71DATE
+     A                                      EDTCDE(Y)
+     A                                  3  2'Order  . . . . . . . :'
+     A            DORD           7S 0O  3 26
+     A                                  3 45'Status  . . :'
+     A            DSTAT         10A  O  3 60
+     A                                      DSPATR(HI)
+     A                                  4  2'Customer . . . . . . :'
+     A            DCUST          6S 0O  4 26
+     A            DCNAME        30A  O  4 35
+     A                                  5  2'City . . . . . . . . :'
+     A            DCITY         25A  O  5 26
+     A            DSTATE         2A  O  5 53
+     A                                  6  2'Customer PO  . . . . :'
+     A            DPO           20A  O  6 26
+     A                                  7  2'Order date . . . . . :'
+     A            DDATE         10A  O  7 26
+     A                                  7 45'Ship date . :'
+     A            DSHIP         10A  O  7 60
+     A                                 10  2'Ln'
+     A                                      COLOR(WHT)
+     A                                 10  7'Item'
+     A                                      COLOR(WHT)
+     A                                 10 19'Description'
+     A                                      COLOR(WHT)
+     A                                 10 53'Qty'
+     A                                      COLOR(WHT)
+     A                                 10 61'Price'
+     A                                      COLOR(WHT)
+     A                                 10 73'Amount'
+     A                                      COLOR(WHT)
+     A                                 21 45'Order total . :'
+     A            DTOTAL        11Y 2O 21 62
+     A                                      EDTCDE(1)
+     A                                 23  2'F3=Exit   F12=Cancel'
+     A                                      COLOR(BLU)

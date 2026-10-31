@@ -1,0 +1,84 @@
+     A* ORDENTD: order entry
+     A*
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      CA03(03 'Exit')
+     A                                      CA12(12 'Cancel')
+     A          R ORDSFL                    SFL
+     A            SLINE          2S 0O 11  2
+     A            SITEM         10A  B 11  6
+     A  61                                  DSPATR(RI PC)
+     A            SQTY           5Y 0B 11 18
+     A                                      EDTCDE(Z)
+     A  62                                  DSPATR(RI PC)
+     A            SDESC         30A  O 11 25
+     A            SPRICE         7Y 2O 11 57
+     A                                      EDTCDE(1)
+     A            SAMT           9Y 2O 11 68
+     A                                      EDTCDE(1)
+     A          R ORDCTL                    SFLCTL(ORDSFL)
+     A                                      SFLSIZ(0030)
+     A                                      SFLPAG(0010)
+     A                                      CF04(04 'Prompt')
+     A                                      CF05(05 'Clear')
+     A                                      CF10(10 'Place order')
+     A                                      RTNCSRLOC(&CSRRCD &CSRFLD)
+     A                                      SFLCSRRRN(&CSRRRN)
+     A  31                                  SFLDSP
+     A  32                                  SFLDSPCTL
+     A  33                                  SFLCLR
+     A  34                                  SFLEND(*MORE)
+     A            TOPRRN         4S 0H
+     A                                      SFLRCDNBR(CURSOR)
+     A            CSRRCD        10A  H
+     A            CSRFLD        10A  H
+     A            CSRRRN         5S 0H
+     A                                  1  2'ORDENT'
+     A                                  1 36'Order Entry'
+     A                                      DSPATR(HI)
+     A                                  1 71SYSNAME
+     A                                  2 71DATE
+     A                                      EDTCDE(Y)
+     A                                  3  2'Customer . . . . . . .'
+     A            HCUST          6Y 0B  3 26
+     A                                      EDTCDE(Z)
+     A  51                                  ERRMSG('Type an active customer -
+     A                                      number, or press F4 to pick one.' -
+     A                                      51)
+     A            HCNAME        30A  O  3 35
+     A                                  4  2'Customer PO  . . . . .'
+     A            HPO           20A  B  4 26
+     A                                  5  2'Ship date  . . . . . .'
+     A            HSHIP          8Y 0B  5 26
+     A                                      EDTCDE(Z)
+     A  52                                  ERRMSG('Type a ship date from -
+     A                                      today on, as YYYYMMDD.' 52)
+     A                                  5 35'YYYYMMDD, blank for a week from -
+     A                                      today'
+     A                                      COLOR(BLU)
+     A                                  6  2'Credit limit . . . . :'
+     A            HCRLMT         9Y 2O  6 26
+     A                                      EDTCDE(1)
+     A                                  8  2'Type items and quantities, press -
+     A                                      Enter to check them.'
+     A                                      COLOR(BLU)
+     A                                 10  2'Ln'
+     A                                      COLOR(WHT)
+     A                                 10  6'Item'
+     A                                      COLOR(WHT)
+     A                                 10 18'Qty'
+     A                                      COLOR(WHT)
+     A                                 10 25'Description'
+     A                                      COLOR(WHT)
+     A                                 10 61'Price'
+     A                                      COLOR(WHT)
+     A                                 10 74'Amount'
+     A                                      COLOR(WHT)
+     A                                 22 45'Order total . . . :'
+     A            HTOTAL        11Y 2O 22 65
+     A                                      EDTCDE(1)
+     A                                 23  2'F3=Exit   F4=Prompt   F5=Clear   -
+     A                                      F10=Place order   F12=Cancel'
+     A                                      COLOR(BLU)
+     A            MSG           78A  O 24  2
+     A                                      COLOR(WHT)

@@ -1,0 +1,5 @@
+     A* ORDHCUST: orders by customer, newest first
+     A*
+     A          R ORDHR                     PFILE(ORDHDR)
+     A          K OHCUST
+     A          K OHORD                     DESCEND

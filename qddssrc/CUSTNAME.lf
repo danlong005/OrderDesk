@@ -1,0 +1,5 @@
+     A* CUSTNAME: customers by name
+     A*
+     A          R CUSTR                     PFILE(CUSTMAST)
+     A          K CMNAME
+     A          K CMCUST
